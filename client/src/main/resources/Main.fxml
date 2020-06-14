@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="geekbrains.client.controllers.MainController"
+      style="-fx-background-color: #eee; -fx-background-radius: 8; -fx-border-radius: 8;">
+
+    <MenuBar style="-fx-background-radius: 8 8 0 0;">
+        <Menu text="App">
+            <MenuItem text="Add Contacts" onAction="#openContactsForm"/>
+            <MenuItem text="Exit" onAction="#exit"/>
+        </Menu>
+    </MenuBar>
+
+
+    <HBox VBox.vgrow="ALWAYS">
+        <ListView fx:id="contactsView" style="-fx-background-color: #ddd; -fx-background-radius: 0 0 0 8;">
+            <contextMenu>
+                <ContextMenu fx:id="contactsCtxMenu">
+                    <items>
+                        <MenuItem text="Add" onAction="#openContactsForm"/>
+                        <MenuItem text="Remove" onAction="#removeContact"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </ListView>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <TextArea fx:id="messagesView" editable="false" VBox.vgrow="ALWAYS"/>
+            <HBox>
+                <TextField fx:id="messageInput" HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
+                <Button text="send" style="-fx-background-color: #44d; -fx-background-radius: 0 0 8 0;"
+                        onAction="#sendMsg"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="geekbrains.client.controllers.LoginController"
+          alignment="center" hgap="10" vgap="15" styleClass="root">
+    <padding>
+        <Insets top="15" right="25" bottom="15" left="25"/>
+    </padding>
+
+
+    <HBox alignment="center" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <padding>
+            <Insets bottom="25"/>
+        </padding>
+        <Text id="header" text="Sign in"/>
+    </HBox>
+
+    <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="usernameInput" minWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <PasswordField fx:id="passwordInput" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Text fx:id="message" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+    <HBox alignment="bottom_left" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <Hyperlink text="Create account" onAction="#createAccount"/>
+    </HBox>
+    <HBox alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button minWidth="150" text="Login" onAction="#login"/>
+    </HBox>
+
+
+    <stylesheets>
+        <URL value="@Login.css"/>
+    </stylesheets>
+</GridPane>
